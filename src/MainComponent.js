@@ -31,13 +31,13 @@ class Main extends Component {
         <h1>Redux To Do List</h1>
         <ul>
           {/* Task: map through the list displaying the list item. don't forget the unique key*/}
-          <li key={'uniqu key'}>
+          <li key={'unique key'}>
             <input
               type='checkbox'
               // Task: replace true with the property used to show completion
               checked={true}
-              // Task: dispatch toggle instead of console.log
-              onChange={() => console.log('Togging')}
+              // Task: dispatch toggle instead of console.log. Use the index of the array
+              onChange={() => console.log('Toggling')}
             />
             {' Item'}
           </li>
@@ -68,6 +68,8 @@ class Main extends Component {
               <div>Status of task in Redux</div>
               <div>Ability to clear completed tasks</div>
               <div>Ability to remove all tasks</div>
+              <div>Extra:</div>
+              <div>Ability to remove single tasks</div>
             </div>
           </div>
         </ul>
