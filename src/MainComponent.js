@@ -41,6 +41,7 @@ class Main extends Component {
               // Task: dispatch toggle instead of console.log. Use the index of the array
               onChange={() => console.log('Toggling')}
             />
+            {/* Task: Replace this with task activity */}
             {' Item'}
           </li>
 
