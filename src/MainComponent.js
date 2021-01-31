@@ -20,7 +20,9 @@ class Main extends Component {
 
   handleSubmit() {
     if (this.state.todoInput.length > 0) {
-      // Task: dispatch the state value to the action creator
+      // Task: add a new line to dispatch the state value to the action creator
+
+      //This line doesn't change
       this.setState({ todoInput: '' })
     }
   }
