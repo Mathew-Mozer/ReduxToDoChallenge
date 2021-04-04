@@ -1,3 +1,5 @@
+import * as ActionTypes from './ActionTypes'
+
 const initialState = {
   todo: [
     { activity: 'First ToDo', complete: false },
@@ -7,18 +9,18 @@ const initialState = {
 
 export const ToDo = (state = initialState, action) => {
   switch (action.type) {
-    // TASK: Add the cases to match with the code
-    case '':
+    // TASK: Change the cases to match with the code
+    case ActionTypes.CHANGEME:
       const todo = action.payload
       todo.id = state.todo.length
       return { ...state, todo: state.todo.concat(todo) }
-    case '':
+    case ActionTypes.CHANGEME:
       let updatedTodo = [...state.todo]
       updatedTodo[action.payload].complete = !updatedTodo[action.payload].complete
       return { ...state, todo: updatedTodo }
-    case '':
-      return { ...state, todo: state.todo.map((task) => ({ ...task, complete: false })) }
-    case '':
+    case ActionTypes.CHANGEME:
+      return { ...state, todo: state.todo.filter((task) => !task.complete) }
+    case ActionTypes.CHANGEME:
       // TASK implement the final action type
       return {}
     default:

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { addTodo, clearAllTasks, toggleToDo } from './redux/ActionCreators'
 // Task:  Import functions from ActionCreators
 
 // Task: Assign reducer to prop
@@ -32,7 +33,7 @@ class Main extends Component {
       <div className='App'>
         <h1>Redux To Do List</h1>
         <ul>
-          {/* Task: map through the list displaying the list item. don't forget the unique key*/}
+          {/* Task: create a map that displays the list item. don't forget the unique key. we will be using the index of the array*/}
           <li key={'unique key'}>
             <input
               type='checkbox'
@@ -52,12 +53,12 @@ class Main extends Component {
               value={this.state.todoInput}
             />
             <div>
-              <button onClick={() => this.handleSubmit()}>Add To Redux</button>
-              <button onClick={() => console.log('Replace with dispatched function for clearing values')}>
-                Clear Complete
+              <button onClick={() => this.handleSubmit()}>Add Task</button>
+              <button onClick={() => alert('Replace with dispatched function for clearing values')}>
+                Remove Completed
               </button>
-              <button onClick={() => console.log('Replace with dispatched function for clearing the list')}>
-                Clear List
+              <button onClick={() => alert('Replace with dispatched function for clearing the list')}>
+                Empty List
               </button>
             </div>
           </div>
@@ -66,13 +67,19 @@ class Main extends Component {
             Redux Challenge
             <br />
             <br />
-            <div>
-              <div>Add Tasks to list</div>
-              <div>Status of task in Redux</div>
-              <div>Ability to clear completed tasks</div>
-              <div>Ability to remove all tasks</div>
-              <div>Extra:</div>
-              <div>Ability to remove single tasks</div>
+            <div style={{ justifyContent: 'center', display: 'flex' }}>
+              <ol>
+                <div style={{ margin: 10 }}>
+                  This website is broken. We are missing some functionality and need your help fixing it.
+                </div>
+                <li>Tasks do not render on the page. There should be 2 when the page loads.</li>
+                <li>Can't add tasks.</li>
+                <li>The tasks do not toggle when clicked. This should be dispatched into redux.</li>
+                <li>Completed tasks do not remove.</li>
+                <li>All tasks do not remove.</li>
+                <div>Extra:</div>
+                <li>Ability to remove single tasks.</li>
+              </ol>
             </div>
           </div>
         </ul>
@@ -82,4 +89,4 @@ class Main extends Component {
 }
 
 // Task: Connect this function to redux
-export default Main
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
